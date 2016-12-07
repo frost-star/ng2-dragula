@@ -100,7 +100,7 @@ export class DragulaService {
       } else {
         let notCopy = dragElm === dropElm;
         let targetModel = drake.models[drake.containers.indexOf(target)];
-        let dropElmModel = notCopy ? sourceModel[dragIndex] : JSON.parse(JSON.stringify(sourceModel[dragIndex]));
+        let dropElmModel = notCopy ? sourceModel[dragIndex] : Object.assign({}, sourceModel[dragIndex]);
 
         if (notCopy) {
           sourceModel.splice(dragIndex, 1);
